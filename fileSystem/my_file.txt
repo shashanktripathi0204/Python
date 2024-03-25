@@ -1,0 +1,5 @@
+My Name is shashank,
+Learnig file read and write operations, in pythons
+
+New Text.
+New Text.
