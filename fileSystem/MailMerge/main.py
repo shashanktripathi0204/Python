@@ -8,7 +8,6 @@ with open('./Input/Letters/starting_letter.txt', 'r') as file:
     content = file.read()
 
 # Replace the placeholder with each name and write to the file
-
 for name in names:
     name = name.strip() # strping the \n from names
     with open(f'./Output/ReadyToSend/Letter_for_{name}.txt', 'w') as file:
