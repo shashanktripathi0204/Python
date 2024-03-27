@@ -24,9 +24,7 @@ while(len(guessed_state) <= len(states_name)):
     # print(answer_state)
     if answer_state == "Exit":
         missing_state = {"State": []}
-        for state in states_name:
-            if state not in guessed_state:
-                missing_state["State"].append(state)
+        missing_state["State"] = [state for state in states_name if state not in guessed_state]
         new_data = pd.DataFrame(missing_state)
         new_data.to_csv("States_to_learn.csv")
         break
