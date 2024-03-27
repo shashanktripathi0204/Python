@@ -1,3 +1,4 @@
+# TODO: using list comprehension find the common int in both files
 with open("file1.txt") as file1:
     file_one = file1.readlines()
 file_one = [file.strip() for file in file_one]
