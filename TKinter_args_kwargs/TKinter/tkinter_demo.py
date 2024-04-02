@@ -31,11 +31,11 @@ entry.pack()
 # Text
 text = Text(height=5, width=30)
 # Puts cursor in textbox.
-text.focus()
+text.focus() # foucs so that the cursor starts in the textbox
 # Adds some text to begin with.
 text.insert(END, "Example of multi-line text entry.")
 # Gets current value in textbox at line 1, character 0
-print(text.get("1.0", END))
+print(text.get("1.0", END)) # get helps in getting hold of the text in the textbox, 1.0 means text starting from the first line at character 0
 text.pack()
 
 
