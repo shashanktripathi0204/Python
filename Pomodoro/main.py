@@ -50,7 +50,11 @@ def count_down(count):
         window.after(1000, count_down, count - 1)
     else:
         start_timer()
-
+        marks = ""
+        work_Sessions = math.floor(reps/2)
+        for _ in range(work_Sessions):
+            marks += "✔"
+        tick_label.config(text = marks)
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
 window.title("Pomodoro")
@@ -68,7 +72,7 @@ timer_label = Label(text = "Timer", font=(FONT_NAME,50,"bold"), fg = GREEN, bg =
 timer_label.grid(row = 0, column = 1)
 
 # Tickmark
-tick_label = Label(text = "🗸", font=("Arial",24,"bold"), fg = GREEN, bg = YELLOW)
+tick_label = Label(font=("Arial",24,"bold"), fg = GREEN, bg = YELLOW)
 tick_label.grid(row = 3, column = 1)
 
 # start_button
