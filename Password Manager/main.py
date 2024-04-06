@@ -80,7 +80,7 @@ website_entry.focus()
 domain_entry = Entry(width=35)
 # domain_entry.insert(END, string="")
 domain_entry.grid(row = 2, column = 1, columnspan = 2,sticky="EW")
-domain_entry.insert(0, "shashanktripathi99@outlook.com")
+domain_entry.insert(0, "dummy@email.com")
 
 # Password Entries
 password_entry = Entry(width=21)
