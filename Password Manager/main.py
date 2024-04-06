@@ -8,6 +8,7 @@ import json
 FONT_NAME = "Courier"
 # ------------------------ PASSWORD GENERATOR -------------------------- #
 def generate_password():
+    password_entry.delete(0, END)
     letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
                'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
                'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
@@ -39,15 +40,24 @@ def save():
     if(len(website) == 0 or len(domain) == 0 or len(password) == 0):
         messagebox.showinfo(title="Oops", message="Madetory Fields are emmpty")
     else:
-        with open("./data.json", mode='r') as data_file:
-            # Reading the old data
-            data = json.load(data_file)
-            # Updating the old data
-            data.update(new_data)
-        with open("./data.json", mode = "w") as data_file:
-            # Saving the updated data
-            json.dump(data, data_file, indent = 4)
+        try:
+            with open("./data.json", mode='r') as data_file:
+                # Reading the old data
+                data = json.load(data_file)
+                # Updating the old data
+                data.update(new_data)
 
+        except FileNotFoundError:
+            # Creating a new file
+            with open("./data.json", mode = "w") as data_file:
+                # Saving the updated data
+                json.dump(new_data, data_file, indent = 4)
+
+        else:
+            with open("./data.json", mode = "w") as data_file:
+                # Saving the updated data
+                json.dump(data, data_file, indent = 4)
+        finally:
             website_entry.delete(0, END)
             password_entry.delete(0, END)
             domain_entry.delete(0, END)
