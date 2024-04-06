@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import messagebox
 import random
 import pyperclip
+import json
 
 # ---------------------------- CONSTANTS ------------------------------- #
 FONT_NAME = "Courier"
@@ -28,22 +29,29 @@ def save():
     website = website_entry.get()
     domain = domain_entry.get()
     password = password_entry.get()
+    new_data = {
+        website:{
+            "email" : domain,
+            "password" : password
+        }
+    }
 
     if(len(website) == 0 or len(domain) == 0 or len(password) == 0):
         messagebox.showinfo(title="Oops", message="Madetory Fields are emmpty")
     else:
-        # Pop up
-        is_ok = messagebox.askokcancel(title = website, message = f"Entered Details: \nEmail : {domain}" 
-                                                                  f"\nPassword : {password} \nIs it okay to save?")
-        if is_ok:
-            print("uwuwu")
-            with open("./data.txt", mode='a') as file:
-                # website | email/username | password
-                file.write(f"{website} | {domain} | {password}\n")
-                website_entry.delete(0, END)
-                password_entry.delete(0, END)
-                domain_entry.delete(0, END)
-                domain_entry.insert(0, "dummy@email.com")
+        with open("./data.json", mode='r') as data_file:
+            # Reading the old data
+            data = json.load(data_file)
+            # Updating the old data
+            data.update(new_data)
+        with open("./data.json", mode = "w") as data_file:
+            # Saving the updated data
+            json.dump(data, data_file, indent = 4)
+
+            website_entry.delete(0, END)
+            password_entry.delete(0, END)
+            domain_entry.delete(0, END)
+            domain_entry.insert(0, "dummy@email.com")
 
 
 
