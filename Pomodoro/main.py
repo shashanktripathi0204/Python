@@ -1,6 +1,6 @@
 from tkinter import *
 import math
-# ---------------------------- CONSTANTS ------------------------------- #
+# ---------------------------- CONSTANTS --------------------------------- #
 PINK = "#e2979c"
 RED = "#e7305b"
 GREEN = "#9bdeac"
@@ -22,7 +22,7 @@ def reset_timer():
     tick_label.config(text = "")
 
 
-# ---------------------------- TIMER MECHANISM ------------------------------- # 
+# ---------------------------- TIMER MECHANISM --------------------------- #
 def start_timer():
     global reps
     reps += 1
@@ -42,7 +42,7 @@ def start_timer():
         count_down(short_break_sec)
         timer_label.config(text="Break", fg = PINK)
 
-# ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
+# ------------------------- COUNTDOWN MECHANISM -------------------------- #
 
 def count_down(count):
     # finding the min and seconds value
