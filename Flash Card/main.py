@@ -20,17 +20,6 @@ else:
     to_learn = words_df.to_dict(orient ="records")
 
 
-# try:
-#     with open("./data/words_to_learn", "r") as file:
-#         words_df = pd.read_csv("./data/french_words.csv")
-#         to_learn = words_df.to_dict(orient ="records")
-#         words_dict = {}
-# except FileNotFoundError:
-#     with open("./data/words_to_learn", "w") as file:
-#         words_df = pd.read_csv("./data/french_words.csv")
-#         to_learn = words_df.to_dict(orient="records")
-#         words_dict = {}
-
 # -------------------------- READING FILES ----------------------------- #
 def new_word():
     """
