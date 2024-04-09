@@ -1,0 +1,9 @@
+1XX: HOLD ON
+
+2XX: HERE YOU GO
+
+3XX: GO AWAY(you don't have permission)
+
+4XX: YOU SCREWED UP
+
+5XX: I SCREWED UP
