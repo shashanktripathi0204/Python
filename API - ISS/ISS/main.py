@@ -4,6 +4,8 @@ from datetime import datetime, timedelta
 import smtplib
 import ssl
 from email.message import EmailMessage
+#
+import time
 
 MY_LAT = 26.812476
 MY_LONG = 80.910011
@@ -42,8 +44,6 @@ def close_to_me():
     subtract_time = timedelta(hours=5, minutes=30)
     time_now = datetime.now()
     time_now = time_now - subtract_time
-    print(time_now.hour)
-    print(data)
 
     # If the ISS is close to my current position,
     # and it is currently dark
@@ -54,20 +54,23 @@ def close_to_me():
 
 # Then email me to tell me to look up.
 # BONUS: run the code every 60 seconds.
+while True:
+    time.sleep(60)
+    if close_to_me():
+        connection = smtplib.SMTP()
+        subject = "ISS Alert"
+        body = """
+        ISS upar hai.... XD !!
+        """
+        em = EmailMessage()
+        em["From"] = MY_EMAIL
+        em["To"] = EMAIL_RECEIVER
+        em["Subject"] = subject
+        em.set_content(body)
 
-if close_to_me():
-    connection = smtplib.SMTP()
-    subject = "ISS Alert"
-    body = """
-    ISS upar hai.... XD !!
-    """
-    em = EmailMessage()
-    em["From"] = MY_EMAIL
-    em["To"] = EMAIL_RECEIVER
-    em["Subject"] = subject
-    em.set_content(body)
-
-    context = ssl.create_default_context()
-    with smtplib.SMTP_SSL('smtp.gmail.com', 465, context = context) as smtp:
-        smtp.login(MY_EMAIL, MY_PASSWORD)
-        smtp.sendmail(MY_EMAIL, EMAIL_RECEIVER, em.as_string())
+        context = ssl.create_default_context()
+        with smtplib.SMTP_SSL('smtp.gmail.com', 465, context = context) as smtp:
+            smtp.login(MY_EMAIL, MY_PASSWORD)
+            smtp.sendmail(MY_EMAIL, EMAIL_RECEIVER, em.as_string())
+    else:
+        print("Not yet")
