@@ -36,13 +36,13 @@ class QuizInterface:
 
         # Button -> True
         true_img = PhotoImage(file="./images/true.png")
-        self.true_button = Button(text = "", width = 100, height = 97, image = true_img,
+        self.true_button = Button(text = "", width = 100, height = 97, image = true_img, bd = 0,
                                   highlightthickness = 0, command = self.answer_true)
         self.true_button.grid(row = 2, column = 0)
 
         # Button -> False
         false_img = PhotoImage(file = "./Images/false.png")
-        self.false_button = Button(text = "", width = 100, height = 97, image = false_img,
+        self.false_button = Button(text = "", width = 100, height = 97, image = false_img, bd = 0,
                                    highlightthickness = 0, command = self.answer_false)
         self.false_button.grid(row=2, column=1)
 
