@@ -75,12 +75,14 @@ canvas.grid(row = 0, column = 0, columnspan = 2)
 
 # Wrong Button
 wrong_img = PhotoImage(file = "./images/wrong.png")
-wrong_button = Button(text = "", width = 100, height = 99, image = wrong_img, highlightthickness=0, command = new_word)
+wrong_button = Button(text = "", width = 100, height = 99, image = wrong_img, bd = 0,
+                      highlightthickness=0, command = new_word)
 wrong_button.grid(row = 1, column = 1)
 
 # Correct Button
 correct_img = PhotoImage(file = "./images/right.png")
-correct_button = Button(text = "", width = 100, height = 99, image = correct_img, highlightthickness=0, command = is_known)
+correct_button = Button(text = "", width = 100, height = 99, image = correct_img, bd = 0,
+                        highlightthickness=0, command = is_known)
 correct_button.grid(row = 1, column = 0)
 
 # Calling new word to generate the first word
