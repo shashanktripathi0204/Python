@@ -51,22 +51,36 @@ print(obj.method_B())  # Output: Method B
 
 # Base class
 class Animal:
+    def __init__(self, name):
+        self.name = name
+
     def speak(self):
-        pass
+        return "Unknown sound"
+
 
 # Intermediate class inheriting from Animal
 class Dog(Animal):
     def speak(self):
         return "Woof!"
 
+
 # Derived class inheriting from Dog
 class Puppy(Dog):
-    def speak(self):
-        return "Yip!"
+    def __init__(self, name, breed):
+        super().__init__(name)  # Call the constructor of the immediate parent class
+        self.breed = breed
 
-# Example usage
-puppy = Puppy()
-print(puppy.speak())  # Output: Yip!
+    def play(self):
+        return f"{self.name} is playing"
+
+
+# Creating instances and using them
+dog = Dog("Buddy")
+print(dog.speak())  # Output: Woof!
+
+puppy = Puppy("Charlie", "Pug")
+print(puppy.speak())  # Output: Woof!
+print(puppy.play())  # Output: Charlie is playing
 
 # -----------------------------------------------------------------
 
