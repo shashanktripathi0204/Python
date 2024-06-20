@@ -35,13 +35,13 @@ class QuizInterface:
         self.canvas.grid(row = 1, column = 0, columnspan = 2, pady = 50)
 
         # Button -> True
-        true_img = PhotoImage(file="./images/true.png")
+        true_img = PhotoImage(file="images/true.png")
         self.true_button = Button(text = "", width = 100, height = 97, image = true_img, bd = 0,
                                   highlightthickness = 0, command = self.answer_true)
         self.true_button.grid(row = 2, column = 0)
 
         # Button -> False
-        false_img = PhotoImage(file = "./Images/false.png")
+        false_img = PhotoImage(file ="images/false.png")
         self.false_button = Button(text = "", width = 100, height = 97, image = false_img, bd = 0,
                                    highlightthickness = 0, command = self.answer_false)
         self.false_button.grid(row=2, column=1)
