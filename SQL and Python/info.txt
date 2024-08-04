@@ -1,0 +1,11 @@
+sql workbench 
+root is admin
+pasword -> root
+
+------------
+
+4 Basic Steps :-
+create connection
+create cursor
+execute sql query
+fetch the result
