@@ -1,0 +1,15 @@
+2025-07-03 16:53:17-root-DEBUG-Starting addition function
+2025-07-03 16:53:17-root-DEBUG-Adding 10 and 5
+2025-07-03 16:53:17-root-INFO-Result of addition: 15
+2025-07-03 16:53:17-root-DEBUG-Starting subtraction function
+2025-07-03 16:53:17-root-DEBUG-Subtracting 5 from 10
+2025-07-03 16:53:17-root-INFO-Result of subtraction: 5
+2025-07-03 16:53:17-root-DEBUG-Starting multiplication function
+2025-07-03 16:53:17-root-DEBUG-Multiplying 10 and 5
+2025-07-03 16:53:17-root-INFO-Result of multiplication: 50
+2025-07-03 16:53:17-root-DEBUG-Starting division function
+2025-07-03 16:53:17-root-ERROR-Division by zero attempted
+2025-07-03 16:53:17-root-ERROR-Error occurred: Cannot divide by zero
+2025-07-03 16:53:17-root-DEBUG-Starting division function
+2025-07-03 16:53:17-root-DEBUG-Dividing 10 by 5
+2025-07-03 16:53:17-root-INFO-Result of division: 2.000000

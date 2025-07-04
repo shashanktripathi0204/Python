@@ -1,0 +1,15 @@
+2025-07-03 18:06:48 - MathApp - DEBUG - Starting addition function
+2025-07-03 18:06:48 - MathApp - DEBUG - Adding 10 and 5
+2025-07-03 18:06:48 - MathApp - INFO - Result of addition: 15
+2025-07-03 18:06:48 - MathApp - DEBUG - Starting subtraction function
+2025-07-03 18:06:48 - MathApp - DEBUG - Subtracting 5 from 10
+2025-07-03 18:06:48 - MathApp - INFO - Result of subtraction: 5
+2025-07-03 18:06:48 - MathApp - DEBUG - Starting multiplication function
+2025-07-03 18:06:48 - MathApp - DEBUG - Multiplying 10 and 5
+2025-07-03 18:06:48 - MathApp - INFO - Result of multiplication: 50
+2025-07-03 18:06:48 - MathApp - DEBUG - Starting division function
+2025-07-03 18:06:48 - MathApp - ERROR - Division by zero attempted
+2025-07-03 18:06:48 - MathApp - ERROR - Error occurred: Cannot divide by zero
+2025-07-03 18:06:48 - MathApp - DEBUG - Starting division function
+2025-07-03 18:06:48 - MathApp - DEBUG - Dividing 10 by 5
+2025-07-03 18:06:48 - MathApp - INFO - Result of division: 2.0
